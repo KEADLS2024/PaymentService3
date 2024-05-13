@@ -5,6 +5,7 @@ using RabbitMQ.Client;
 using Stripe;
 using Stripe.Checkout;
 using PaymentService3.Models;
+using System;
 
 namespace PaymentService3.Controllers
 {
@@ -25,6 +26,7 @@ namespace PaymentService3.Controllers
         {
             try
             {
+                string customerId = request.CustomerId;
                 var options = new SessionCreateOptions
                 {
                     PaymentMethodTypes = new List<string>
@@ -41,13 +43,19 @@ namespace PaymentService3.Controllers
                                 ProductData = new SessionLineItemPriceDataProductDataOptions
                                 {
                                     Name = request.ProductName,
+
                                 },
                                 UnitAmount = request.ProductPrice,
+
                             },
-                            Quantity = request.Quantity,
+                            Quantity = request.Quantity,  
+                            
                         },
                     },
+
+                    //Customer = customerId,
                     Mode = "payment",
+                   
                     SuccessUrl = "https://example.com/success",
                     CancelUrl = "https://example.com/cancel",
                 };
