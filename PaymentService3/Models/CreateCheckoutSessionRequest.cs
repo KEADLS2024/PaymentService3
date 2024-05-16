@@ -6,6 +6,6 @@
         public int ProductPrice { get; set; }
         public int Quantity { get; set; }
 
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
     }
 }

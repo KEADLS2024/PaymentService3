@@ -1,0 +1,29 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "../**/*.cs"
+          ],
+          "cwd": "src",
+          "exclude": [
+            "**/obj/**",
+            "**/bin/**"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml"
+        ]
+      }
+    ],
+    "dest": "_site"
+  }
+}
