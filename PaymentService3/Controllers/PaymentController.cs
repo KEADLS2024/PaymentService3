@@ -17,12 +17,22 @@ namespace PaymentService3.Controllers
     public class PaymentController : Controller
     {
         private readonly StripeSettings _stripeConfig;
+
+        /// <summary>
+        /// Initialiserer en ny instans af <see cref="PaymentController"/>-klassen.
+        /// </summary>
+        /// <param name="configuration">Konfigurationen, der indeholder Stripe-indstillingerne.</param>
         public PaymentController(IConfiguration configuration)
         {
             _stripeConfig = configuration.GetSection("StripeSettings").Get<StripeSettings>();
             StripeConfiguration.ApiKey = _stripeConfig.SecretKey;
         }
 
+        /// <summary>
+        /// Opretter en ny betalingssession til behandling af betalinger.
+        /// </summary>
+        /// <param name="request">Anmodningen indeholder betalingsoplysninger.</param>
+        /// <returns>En handling, der repræsenterer resultatet af operationen.</returns>
         [HttpPost]
         [Route("create-checkout-session")]
         public async Task<IActionResult> CreateCheckoutSession([FromBody] CreateCheckoutSessionRequest request)
@@ -71,9 +81,13 @@ namespace PaymentService3.Controllers
             }
         }
 
+        /// <summary>
+        /// Sender kunde-id til RabbitMQ-køen.
+        /// </summary>
+        /// <param name="customerId">Kunde-id, der skal sendes til køen.</param>
         private void SendCustomerIdToQueue(string customerId)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" }; // Update to your RabbitMQ server address
+            var factory = new ConnectionFactory() { HostName = "localhost" }; // Opdater til din RabbitMQ-serveradresse
 
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
