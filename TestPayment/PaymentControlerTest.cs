@@ -26,7 +26,7 @@ namespace TestPayment
                 var controller = new PaymentController(configuration);
                 var request = new CreateCheckoutSessionRequest
                 {
-                    CustomerId = "customer123",
+                    CustomerId = 23,
                     ProductName = "Product 1",
                     ProductPrice = 250,
                     Quantity = 1
