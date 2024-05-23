@@ -1,0 +1,67 @@
+\doxysection{Payment\+Service3.\+Controllers.\+Payment\+Controller Class Reference}
+\hypertarget{class_payment_service3_1_1_controllers_1_1_payment_controller}{}\label{class_payment_service3_1_1_controllers_1_1_payment_controller}\index{PaymentService3.Controllers.PaymentController@{PaymentService3.Controllers.PaymentController}}
+
+
+Controlleren er ansvarlig for håndtering af betalingsrelaterede operationer.  
+
+
+Inheritance diagram for Payment\+Service3.\+Controllers.\+Payment\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_payment_service3_1_1_controllers_1_1_payment_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_payment_service3_1_1_controllers_1_1_payment_controller_a2a077934cfc6c67fa114a0c02906ce85}{Payment\+Controller}} (IConfiguration configuration)
+\begin{DoxyCompactList}\small\item\em Initialiserer en ny instans af Payment\+Controller-\/klassen. \end{DoxyCompactList}\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{class_payment_service3_1_1_controllers_1_1_payment_controller_a444135d5bde74f550151f6cc3e660d66}{Create\+Checkout\+Session}} (\mbox{[}From\+Body\mbox{]} Create\+Checkout\+Session\+Request request)
+\begin{DoxyCompactList}\small\item\em Opretter en ny betalingssession til behandling af betalinger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlleren er ansvarlig for håndtering af betalingsrelaterede operationer. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_payment_service3_1_1_controllers_1_1_payment_controller_a2a077934cfc6c67fa114a0c02906ce85}\label{class_payment_service3_1_1_controllers_1_1_payment_controller_a2a077934cfc6c67fa114a0c02906ce85} 
+\index{PaymentService3.Controllers.PaymentController@{PaymentService3.Controllers.PaymentController}!PaymentController@{PaymentController}}
+\index{PaymentController@{PaymentController}!PaymentService3.Controllers.PaymentController@{PaymentService3.Controllers.PaymentController}}
+\doxysubsubsection{\texorpdfstring{PaymentController()}{PaymentController()}}
+{\footnotesize\ttfamily Payment\+Service3.\+Controllers.\+Payment\+Controller.\+Payment\+Controller (\begin{DoxyParamCaption}\item[{IConfiguration}]{configuration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialiserer en ny instans af Payment\+Controller-\/klassen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configuration} & Konfigurationen, der indeholder Stripe-\/indstillingerne.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_payment_service3_1_1_controllers_1_1_payment_controller_a444135d5bde74f550151f6cc3e660d66}\label{class_payment_service3_1_1_controllers_1_1_payment_controller_a444135d5bde74f550151f6cc3e660d66} 
+\index{PaymentService3.Controllers.PaymentController@{PaymentService3.Controllers.PaymentController}!CreateCheckoutSession@{CreateCheckoutSession}}
+\index{CreateCheckoutSession@{CreateCheckoutSession}!PaymentService3.Controllers.PaymentController@{PaymentService3.Controllers.PaymentController}}
+\doxysubsubsection{\texorpdfstring{CreateCheckoutSession()}{CreateCheckoutSession()}}
+{\footnotesize\ttfamily async Task$<$ IAction\+Result $>$ Payment\+Service3.\+Controllers.\+Payment\+Controller.\+Create\+Checkout\+Session (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} Create\+Checkout\+Session\+Request}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Opretter en ny betalingssession til behandling af betalinger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & Anmodningen indeholder betalingsoplysninger.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+En handling, der repræsenterer resultatet af operationen.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Payment\+Service3/\+Controllers/Payment\+Controller.\+cs\end{DoxyCompactItemize}

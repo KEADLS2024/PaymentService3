@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TestPayment
-    {
+{
         [TestClass]
         public class PaymentControlerTest
         {
@@ -19,7 +19,7 @@ namespace TestPayment
                 var configuration = new ConfigurationBuilder()
                     .AddInMemoryCollection(new Dictionary<string, string>
                     {
-                    { "StripeSettings:SecretKey", "sk_test_51PECtbRpjT8p9PLVgi8k4gbyDTSNSs8m5lzT1kFCbl3vbyZfhi4JpQNBxOsycliOChEtEMstO4HK5KnEAEtTkFAt00jykFmX3J" }
+                { "StripeSettings:SecretKey", "sk_test_51PECtbRpjT8p9PLVgi8k4gbyDTSNSs8m5lzT1kFCbl3vbyZfhi4JpQNBxOsycliOChEtEMstO4HK5KnEAEtTkFAt00jykFmX3J" }
                     })
                     .Build();
 
@@ -36,12 +36,14 @@ namespace TestPayment
                 var result = await controller.CreateCheckoutSession(request);
 
                 // Assert
-                Assert.IsInstanceOfType(result, typeof(OkObjectResult));
-                var okResult = (OkObjectResult)result;
-                Assert.IsNotNull(okResult.Value);
-                Assert.AreEqual(200, okResult.StatusCode);
-            }
+                Assert.IsInstanceOfType(result, typeof(ObjectResult)); // Generisk assert for at kontrollere, at resultatet er en ObjectResult
+                var objectResult = (ObjectResult)result;
+                Assert.IsNotNull(objectResult.Value);
+                Assert.AreEqual(200, objectResult.StatusCode);
+             }
+
+
         }
-    }
+}
 
 
